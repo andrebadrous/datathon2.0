@@ -1,0 +1,220 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #000;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 70px;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(0,255,255,0.18), transparent 30%),
+    radial-gradient(circle at 80% 30%, rgba(180,0,255,0.2), transparent 30%),
+    #000;
+}
+
+.tag {
+  color: cyan;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-size: clamp(4rem, 10vw, 9rem);
+  line-height: 0.9;
+}
+
+.hero h1 span {
+  color: cyan;
+}
+
+.desc {
+  margin-top: 30px;
+  max-width: 650px;
+  color: #aaa;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.gallery-section {
+  min-height: 220vh;
+  position: relative;
+  background: black;
+}
+
+.gallery-grid {
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  padding: 50px;
+  align-items: center;
+  overflow: hidden;
+}
+
+.gallery-grid > img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 24px;
+  box-shadow: 0 0 40px rgba(0, 255, 255, 0.15);
+}
+
+.center-card {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 320px;
+  height: 430px;
+  transform: translate(-50%, -50%);
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 0 90px rgba(0, 255, 255, 0.4);
+  z-index: 10;
+}
+
+.center-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.scan-label {
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  padding: 18px;
+  background: rgba(0,0,0,0.65);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 18px;
+}
+
+.scan-label p {
+  color: cyan;
+  font-size: 0.8rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.scan-label h2 {
+  margin-top: 5px;
+  font-size: 2rem;
+}
+
+.upload-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  background:
+    radial-gradient(circle at center, rgba(0,255,255,0.14), transparent 35%),
+    #050505;
+}
+
+.upload-section h2 {
+  font-size: 4rem;
+}
+
+form {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+input {
+  padding: 14px;
+  background: white;
+  color: black;
+  border-radius: 12px;
+}
+
+button {
+  padding: 14px 28px;
+  border: none;
+  border-radius: 12px;
+  background: cyan;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#result {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.cards-section {
+  min-height: 100vh;
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+  padding: 70px;
+  background: #000;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 300px;
+  min-height: 220px;
+  padding: 35px;
+  border-radius: 24px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 0 50px rgba(0,255,255,0.08);
+}
+
+.card h3 {
+  font-size: 2rem;
+  color: cyan;
+  margin-bottom: 15px;
+}
+
+.card p {
+  color: #aaa;
+  line-height: 1.5;
+}
+
+@media (max-width: 700px) {
+  .hero {
+    padding: 35px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    padding: 25px;
+  }
+
+  .gallery-grid > img {
+    height: 180px;
+  }
+
+  .center-card {
+    width: 260px;
+    height: 360px;
+  }
+
+  .upload-section h2 {
+    font-size: 3rem;
+  }
+}

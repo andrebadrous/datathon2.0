@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Image Detector</title>
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+</head>
+
+<body>
+
+  <section class="hero">
+    <p class="tag">CIFAKE AI Detector</p>
+    <h1>Detect what is real.<br><span>Expose what is AI.</span></h1>
+    <p class="desc">
+      Upload an image and our model predicts whether it is REAL or AI-generated.
+    </p>
+  </section>
+
+  <section class="gallery-section">
+    <div class="gallery-grid">
+
+      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=900&auto=format&fit=crop&q=80">
+      <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?w=900&auto=format&fit=crop&q=80">
+      <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=900&auto=format&fit=crop&q=80">
+      <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=900&auto=format&fit=crop&q=80">
+      <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=900&auto=format&fit=crop&q=80">
+      <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=900&auto=format&fit=crop&q=80">
+
+      <div class="center-card">
+        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&auto=format&fit=crop&q=80">
+        <div class="scan-label">
+          <p>Live Scan</p>
+          <h2>FAKE · 94%</h2>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="upload-section">
+    <h2>Try the Detector</h2>
+
+    <form id="uploadForm">
+      <input type="file" id="imageInput" name="image" accept="image/*" required>
+      <button type="submit">Detect AI</button>
+    </form>
+
+    <div id="result"></div>
+  </section>
+
+  <section class="cards-section">
+    <div class="card">
+      <h3>Upload</h3>
+      <p>User uploads an image.</p>
+    </div>
+
+    <div class="card">
+      <h3>Model</h3>
+      <p>CNN analyzes the image using CIFAKE training.</p>
+    </div>
+
+    <div class="card">
+      <h3>Result</h3>
+      <p>The app returns REAL or FAKE with confidence.</p>
+    </div>
+  </section>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
